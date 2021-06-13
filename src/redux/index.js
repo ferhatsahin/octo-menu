@@ -1,5 +1,5 @@
 import { combineReducers, createStore } from 'redux';
-import menuReducer from './reducers/menu_reducer.js';
+import menuReducer from './reducers/menu_reducer';
 
 const rootReducer = combineReducers({
   menu: menuReducer,

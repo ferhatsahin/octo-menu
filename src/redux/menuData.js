@@ -1,15 +1,43 @@
 export default [
   {
     id: 0,
-    name: 'Orders',
+    label: 'Orders',
     items: [
       {
         id: 11,
-        name: 'Expired Orders',
+        label: 'Expired Orders',
       },
       {
         id: 12,
-        name: 'Latest Orders',
+        label: 'Latest Orders',
+      },
+    ],
+  },
+  {
+    id: 1,
+    label: 'Orders',
+    items: [
+      {
+        id: 11,
+        label: 'Expired Orders',
+      },
+      {
+        id: 12,
+        label: 'Latest Orders',
+      },
+    ],
+  },
+  {
+    id: 2,
+    label: 'Orders',
+    items: [
+      {
+        id: 11,
+        label: 'Expired Orders',
+      },
+      {
+        id: 12,
+        label: 'Latest Orders',
       },
     ],
   },
