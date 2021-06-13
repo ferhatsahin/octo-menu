@@ -1,12 +1,14 @@
 import { Provider } from 'react-redux';
-import SideBar from './components/SideBar';
-import './app.css';
+
 import store from './redux';
+import Home from './pages/Home';
+
+import './app.css';
 
 function App() {
   return (
     <Provider store={store}>
-      <SideBar />
+      <Home/>
     </Provider>
   );
 }

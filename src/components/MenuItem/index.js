@@ -1,33 +1,28 @@
-import { MenuItemWrapper } from "./styles";
-import { useDispatch } from 'react-redux';
-
-import useNavigationMenu from "../../hooks/useNavigationMenu";
+import { CarrotDown } from '../../assets/icons';
+import { useNavigationMenu } from '../../hooks';
+import { MenuItemWrapper, MenuItemContainer } from './styles';
 
 function MenuItem({ id, label, items }) {
+  const { activeItem, setMenuItem } = useNavigationMenu();
 
-    const { activeItemId, setActiveItem } = useNavigationMenu();
-    
-    const dispatch = useDispatch();
+  const isActive = activeItem[0] === id[0];
 
-    const handleOnClick = () => {
-        dispatch(setActiveItem(id));
-    }
-
-    const isActive= activeItemId === id;
-
-    const subMenuItemRenderer = () => {
-        if(!items?.length || !isActive) return null;
-        return <ul>{items.map(item => <MenuItem key={item.id} {...item} />)}</ul>
-    }
-
-    return (
-        <>
-        <MenuItemWrapper active={isActive} onClick={handleOnClick}>
-            <span>{label}</span>
-            {subMenuItemRenderer()}
-        </MenuItemWrapper>
-        </>
-    )
+  return (
+    <MenuItemWrapper active={isActive}>
+      <MenuItemContainer onClick={() => setMenuItem(id)}>
+        <span>{label}</span>
+        {items && <CarrotDown width={16} height={16} />}
+      </MenuItemContainer>
+      {items && (
+        <ul>
+          {items.map((item) => {
+              const [parentMenuId] = id;
+              return <MenuItem key={item.id} {...item} id={[parentMenuId, item.id]} />
+          })}
+        </ul>
+      )}
+    </MenuItemWrapper>
+  );
 }
 
-export default MenuItem
+export default MenuItem;

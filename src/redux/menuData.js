@@ -4,26 +4,26 @@ export default [
     label: 'Orders',
     items: [
       {
-        id: 11,
+        id: 1,
         label: 'Expired Orders',
       },
       {
-        id: 12,
+        id: 2,
         label: 'Latest Orders',
       },
     ],
   },
   {
     id: 1,
-    label: 'Orders',
+    label: 'Partners',
     items: [
       {
-        id: 11,
-        label: 'Expired Orders',
+        id: 1,
+        label: 'Solution Partners',
       },
       {
-        id: 12,
-        label: 'Latest Orders',
+        id: 2,
+        label: 'Technology Partners',
       },
     ],
   },
@@ -32,11 +32,11 @@ export default [
     label: 'Orders',
     items: [
       {
-        id: 11,
+        id: 1,
         label: 'Expired Orders',
       },
       {
-        id: 12,
+        id: 2,
         label: 'Latest Orders',
       },
     ],
