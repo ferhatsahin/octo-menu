@@ -3,13 +3,13 @@ import styled, { css } from 'styled-components';
 export const MenuItemWrapper = styled.div`
   padding: 8px 16px;
   position: relative;
-  svg { 
+  svg {
     margin-left: 12px;
     transition-duration: 0.2s;
     transition-property: transform;
   }
-  ul{
-      display: none;
+  ul {
+    display: none;
   }
   ${({ active }) =>
     active &&
@@ -19,10 +19,9 @@ export const MenuItemWrapper = styled.div`
         transform: rotate(180deg);
       }
       ul {
-          display: block;
+        display: block;
       }
     `}
-
 `;
 
 export const MenuItemContainer = styled.div`
@@ -31,5 +30,5 @@ export const MenuItemContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  user-select: none; 
+  user-select: none;
 `;

@@ -1,5 +1,5 @@
-import { useSelector, useDispatch } from "react-redux";
-import { setActiveItem } from "../redux/actions/menu_actions";
+import { useSelector, useDispatch } from 'react-redux';
+import { setActiveItem } from '../redux/actions/menu_actions';
 
 const useNavigationMenu = () => {
   const { activeItem, menuItems } = useSelector(({ menu }) => menu);
@@ -10,7 +10,7 @@ const useNavigationMenu = () => {
   return {
     menuItems,
     activeItem,
-    setMenuItem
+    setMenuItem,
   };
 };
 

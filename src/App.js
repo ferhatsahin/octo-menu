@@ -8,7 +8,7 @@ import './app.css';
 function App() {
   return (
     <Provider store={store}>
-      <Home/>
+      <Home />
     </Provider>
   );
 }
