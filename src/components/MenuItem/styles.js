@@ -14,7 +14,7 @@ export const MenuItemWrapper = styled.div`
   ${({ active }) =>
     active &&
     css`
-      background-color: red;
+      background-color: gray;
       svg {
         transform: rotate(180deg);
       }

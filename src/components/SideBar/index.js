@@ -7,6 +7,7 @@ function SideBar() {
   const { menuItems } = useNavigationMenu();
 
   const renderMenuItems = () => {
+    if(!menuItems?.length) return null;
     return menuItems.map((menuItem) => (
       <MenuItem key={menuItem.id} {...menuItem} id={[menuItem.id, -1]} />
     ));

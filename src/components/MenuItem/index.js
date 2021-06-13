@@ -4,8 +4,10 @@ import { MenuItemWrapper, MenuItemContainer } from './styles';
 
 function MenuItem({ id, label, items }) {
   const { activeItem, setMenuItem } = useNavigationMenu();
+  const [activeParentMenuId] = activeItem;
+  const [parentMenuId] = id;
 
-  const isActive = activeItem[0] === id[0];
+  const isActive = activeParentMenuId === parentMenuId;
 
   return (
     <MenuItemWrapper active={isActive}>
@@ -15,10 +17,9 @@ function MenuItem({ id, label, items }) {
       </MenuItemContainer>
       {items && (
         <ul>
-          {items.map((item) => {
-              const [parentMenuId] = id;
-              return <MenuItem key={item.id} {...item} id={[parentMenuId, item.id]} />
-          })}
+          {items.map((item) => (
+            <MenuItem key={item.id} {...item} id={[parentMenuId, item.id]} />
+          ))}
         </ul>
       )}
     </MenuItemWrapper>
